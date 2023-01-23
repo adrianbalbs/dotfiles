@@ -317,6 +317,10 @@ globalkeys = gears.table.join(
 		awful.spawn("rofi -show drun")
 	end, { description = "rofi for drun and windows", group = "rofi" }),
 
+	awful.key({ modkey }, "b", function()
+		awful.spawn("firefox")
+	end, { description = "Launch browser", group = "firefox" }),
+
 	-- Widgets
 	awful.key({ modkey }, "]", function()
 		volume_widget:inc(5)
