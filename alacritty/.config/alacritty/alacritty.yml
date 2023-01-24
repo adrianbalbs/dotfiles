@@ -84,7 +84,7 @@ shell:
   program: /usr/bin/zsh
 
 key_bindings:
-  - { key: Return, mods: Alt | Shift, action: SpawnNewInstance }
+  - { key: Return, mods: Control | Shift, action: SpawnNewInstance }
 env: 
   TERM: alacritty
 

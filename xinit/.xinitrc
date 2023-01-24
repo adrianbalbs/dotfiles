@@ -38,4 +38,7 @@ fi
 ~/.screenlayout/screenlayout.sh &
 sleep 3 &
 xset r rate 400 100 &
-exec awesome
+~/.fehbg & 
+picom &
+dunst --backend glx & 
+exec dwm
