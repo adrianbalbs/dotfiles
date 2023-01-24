@@ -41,4 +41,5 @@ xset r rate 400 100 &
 ~/.fehbg & 
 picom &
 dunst --backend glx & 
+slstatus &
 exec dwm
