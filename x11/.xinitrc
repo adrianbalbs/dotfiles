@@ -35,9 +35,9 @@ fi
 [ -f ~/.xprofile ] && source ~/.xprofile
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-~/.screenlayout/screenlayout.sh &
-sleep 3 &
 xset r rate 400 100 &
+sleep 3 &
+~/.screenlayout/screenlayout.sh &
 ~/.fehbg & 
 picom &
 dunst --backend glx & 
