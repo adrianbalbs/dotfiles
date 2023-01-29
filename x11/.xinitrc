@@ -36,10 +36,10 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xset r rate 400 100 &
-sleep 3 &
+sleep 3
 ~/.screenlayout/screenlayout.sh &
-~/.fehbg & 
+~/.fehbg &
 picom &
-dunst --backend glx & 
+dunst --backend glx &
 slstatus &
 exec dwm
