@@ -64,7 +64,7 @@ static const Rule rules[] = {
     { "dolphin",  NULL,      NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,		1,           0,        -1 },
 	{ NULL,		  "splf",		NULL,		SPTAG(1),		1,	    1,           0,        -1 },
-	{ NULL,		  "spmixer",	NULL,		SPTAG(2),		0,		1,           0,        -1 },
+	{ NULL,		  "spmixer",	NULL,		SPTAG(2),		1,		1,           0,        -1 },
 };
 
 /* layout(s) */
