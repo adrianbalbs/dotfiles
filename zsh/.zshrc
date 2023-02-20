@@ -52,3 +52,4 @@ function cse() {
 }
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+source /usr/share/nvm/init-nvm.sh
