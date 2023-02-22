@@ -5,7 +5,7 @@ PartOf=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=$HOME/.config/scripts/wacom-config.sh
+ExecStart=/home/adrian/.config/scripts/wacom-config.sh
 
 [Install]
 WantedBy=graphical-session.target 
