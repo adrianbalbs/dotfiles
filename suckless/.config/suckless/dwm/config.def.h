@@ -59,6 +59,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "Brave", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Alacritty", NULL,   NULL,           0,         0,          1,           0,        -1 },
     { "discord", NULL,     NULL,            0,         0,          0,           1,        -1 },
     { "dolphin", NULL,     NULL,            0,         1,          0,           1,        -1 },
@@ -97,7 +98,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
-static const char *browsercmd[] = { "firefox", NULL};
+static const char *browsercmd[] = { "brave", NULL};
 static const char *htopcmd[] = { "alacritty", "-e", "htop", NULL };
 static const char *lfcmd[] = { "alacritty", "-e", "lf", NULL };
 
