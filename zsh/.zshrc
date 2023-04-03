@@ -12,6 +12,8 @@ compinit
 # End of lines added by compinstall
 
 alias ls="ls --color=auto"
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+
 export TERM="xterm-256color"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
