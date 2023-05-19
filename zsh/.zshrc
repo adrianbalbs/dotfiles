@@ -55,4 +55,3 @@ function cse() {
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 source /usr/share/nvm/init-nvm.sh
-source /home/adrian/srcode/pgsql13/env

@@ -38,6 +38,8 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xset r rate 400 100 &
+xinput --set-prop pointer:"Logitech MX Master 3" "libinput Accel Speed" -0.3 &
+xinput --set-prop pointer:"Logitech MX Master 3" "libinput Accel Profile Enabled" 0, 1 &
 sleep 3
 ~/.screenlayout/screenlayout.sh &
 ~/.fehbg &
