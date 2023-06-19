@@ -18,6 +18,8 @@ export TERM="xterm-256color"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export PATH=/home/adrian/scripts:$PATH
+
 eval "$(starship init zsh)"
 
 # Your zID (change this)

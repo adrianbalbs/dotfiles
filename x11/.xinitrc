@@ -38,8 +38,8 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xset r rate 400 100 &
-~/scripts/mouse_setup.sh &
-~/.screenlayout/screenlayout.sh &
+mouse_setup.sh &
+screenlayout.sh &
 sleep 3
 ~/.fehbg &
 picom &
