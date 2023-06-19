@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Mono 10";
+  font: "JetBrainsMono Nerd Font 10";
   modi: "window,run,drun,emoji,calc";
 }
 
@@ -13,7 +13,7 @@ configuration {
   bg-alt: #1a1b26;
 
   fg: #a9b1d6;
-  fg-alt: #a9b1d6;
+  fg-alt: #565f89;
 
   background-color: @bg;
   

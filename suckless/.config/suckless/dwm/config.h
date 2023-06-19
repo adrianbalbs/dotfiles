@@ -102,10 +102,14 @@ static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *browsercmd[] = { "brave", NULL};
 static const char *htopcmd[] = { "alacritty", "-e", "htop", NULL };
 static const char *lfcmd[] = { "alacritty", "-e", "lf", NULL };
+static const char *wallscmd[] = { "rofi_walls.sh", NULL };
+static const char *powercmd[] = { "rofi_power.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = wallscmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powercmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lfcmd } },
