@@ -18,6 +18,6 @@ fi
 # configure the buttons on ${stylus} with your xsetwacom commands...
 #xsetwacom set "${stylus}" Button 2 11
 #...
-echo ${stylus}
-xsetwacom  set ${stylus} MapToOutput HEAD-1
-xsetwacom set ${stylus} area 0 0 21600 12150
+echo "${stylus}"
+xsetwacom  set "${stylus}" MapToOutput HEAD-1
+xsetwacom set "${stylus}" area 0 0 21600 12150
