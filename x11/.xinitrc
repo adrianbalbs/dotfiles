@@ -26,10 +26,10 @@ fi
 # start some nice programs
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 # Make sure this is before the 'exec' command or it won't be sourced.
@@ -38,10 +38,9 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xset r rate 400 100 &
-xinput --set-prop pointer:"Logitech MX Master 3" "libinput Accel Speed" -0.3 &
-xinput --set-prop pointer:"Logitech MX Master 3" "libinput Accel Profile Enabled" 0, 1 &
-sleep 3
+~/scripts/mouse_setup.sh &
 ~/.screenlayout/screenlayout.sh &
+sleep 3
 ~/.fehbg &
 picom &
 dunst --backend glx &
