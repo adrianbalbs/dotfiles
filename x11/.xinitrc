@@ -41,7 +41,7 @@ xset r rate 400 100 &
 mouse_setup.sh &
 screenlayout.sh &
 sleep 3
-./fehbg.sh &
+~/.fehbg &
 picom &
 dunst --backend glx &
 slstatus &
