@@ -3,6 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/adrian/.zshrc'
@@ -10,7 +11,6 @@ zstyle :compinstall filename '/home/adrian/.zshrc'
 autoload -Uz compinit
 compinit
 
-# End of lines added by compinstall
 export TERM="xterm-256color"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
@@ -24,5 +24,14 @@ if [ -f ~/.aliases ]; then
 else
   echo "Missing .aliases files"
 fi
+
+# Keybindings
+bindkey '^H' backward-kill-word
+bindkey '^[^?' backward-delete-word
+bindkey '^[[3;5~' forward-kill-word
+bindkey '^[[3;3~' forward-delete-word
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
+
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 source /usr/share/nvm/init-nvm.sh
