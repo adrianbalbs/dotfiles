@@ -12,7 +12,7 @@ superlight=$(xinput list |
             cut -d'=' -f2)
 
 if [ -n "$mx_master" ]; then
-    xinput --set-prop "$mx_master" "libinput Accel Speed" -0.5 &
+    xinput --set-prop "$mx_master" "libinput Accel Speed" -0.4 &
     xinput --set-prop "$mx_master" "libinput Accel Profile Enabled" 0, 1 &
 fi
 
