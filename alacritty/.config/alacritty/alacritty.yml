@@ -73,3 +73,4 @@ key_bindings:
   - { key: Right, mods: Control, chars: "\ef" }
 env:
   TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: "1.3"
