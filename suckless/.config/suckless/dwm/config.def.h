@@ -104,6 +104,8 @@ static const char *htopcmd[] = { "alacritty", "-e", "htop", NULL };
 static const char *lfcmd[] = { "alacritty", "-e", "lf", NULL };
 static const char *wallscmd[] = { "rofi_walls.sh", NULL };
 static const char *powercmd[] = { "rofi_power.sh", NULL };
+static const char *screenshotcmd[] = { "flameshot", "screen", "--number", "0", NULL };
+static const char *screenshot_sel_cmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -114,6 +116,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lfcmd } },
 	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htopcmd } },
+	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshotcmd } },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = screenshot_sel_cmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

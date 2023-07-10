@@ -62,7 +62,6 @@ cursor:
   style:
     shape: Underline
     blinking: Off
-    blink-interval: 750
 
 shell:
   program: /usr/bin/zsh
