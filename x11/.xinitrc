@@ -42,7 +42,7 @@ mouse_setup.sh &
 screenlayout.sh &
 sleep 3
 ~/.fehbg &
-picom &
-dunst --backend xrender &
+picom --backend xrender &
+dunst &
 slstatus &
 exec dwm
