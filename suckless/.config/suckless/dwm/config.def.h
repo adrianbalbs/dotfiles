@@ -48,6 +48,9 @@ static Sp scratchpads[] = {
 	{"spmixer",   spcmd3},
 };
 
+/* staticstatus */
+static const int statmonval = 1;
+
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "" };
 
