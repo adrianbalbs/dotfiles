@@ -43,6 +43,6 @@ screenlayout.sh &
 sleep 3
 ~/.fehbg &
 picom &
-dunst --backend glx &
+dunst --backend xrender &
 slstatus &
 exec dwm
