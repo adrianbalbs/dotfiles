@@ -39,3 +39,6 @@ fi
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 source /usr/share/nvm/init-nvm.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Created by `pipx` on 2023-08-10 09:20:57
+export PATH="$PATH:/home/adrian/.local/bin"
