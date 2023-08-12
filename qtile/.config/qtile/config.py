@@ -205,20 +205,27 @@ def get_bar1():
                 ),
             widget.CurrentLayout(),
             widget.Spacer(),
+            widget.Net(
+                interface='wlp3s0',
+                format='{down} ↓↑ {up}',
+            ),
+            widget.PulseVolume(
+            device="Focusrite Scarlett 6i6 Analog Surround 2.1",
+            fmt=" {}"
+            ),
             widget.ThermalSensor(
                 format=' {temp:.0f}{unit}',
                 tag_sensor='Tctl',
                 threshold=60,
                 foreground_alert=colors["red"],
                 foreground = colors["fg"],
-                ),
-            widget.PulseVolume(
-            device="Focusrite Scarlett 6i6 Analog Surround 2.1",
-            fmt=" {}"
             ),
             widget.CPU(
                 format=' {load_percent}%'
-                ),
+            ),
+            widget.Memory(
+                format=' {MemPercent}%'
+            ),
             widget.Wlan(
                 #format='  {essid} {percent:2.0%}',
                 format='  {percent:2.0%}',
