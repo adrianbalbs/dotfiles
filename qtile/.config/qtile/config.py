@@ -109,6 +109,8 @@ groups = [
         Group("4", layout="monadwide"),
         Group("5", layout="monadtall"),
         Group("6", layout="monadwide"),
+        Group("7", layout="monadtall"),
+        Group("8", layout="monadwide"),
         ]
 
 for i in groups:
@@ -182,22 +184,24 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 def get_bar1():
-    return [widget.GroupBox(
+    return [
+        widget.GroupBox(
                 highlight_method="line", 
-                active = colors["magenta"], # not current active font color
-                inactive = colors["fg"],
-                rounded = False,
-                disable_drag= True,
-                highlight_color = colors["bg"],
-                this_current_screen_border = colors["magenta"], # current active font color - MAIN
-                this_screen_border = colors["magenta"],
-                other_current_screen_border = colors["bg"],
-                other_screen_border = colors["bg"],
-                urgent_border = colors["red"],
-                urgent_text= colors["red"],
+                active=colors["magenta"], # not current active font color
+                inactive=colors["fg"],
+                rounded=False,
+                disable_drag=True,
+                highlight_color=colors["bg"],
+                this_current_screen_border=colors["blue"], # current active font color - MAIN
+                this_screen_border=colors["magenta"],
+                other_current_screen_border=colors["bg"],
+                other_screen_border=colors["bg"],
+                urgent_alert_method="line",
+                urgent_border=colors["red"],
+                urgent_text=colors["red"],
                 #foreground = colors["fg"],
                 #background = colors["red"],
-                #hide_unused=True,
+                hide_unused=True,
                 ),
             widget.CurrentLayout(),
             widget.Spacer(),
@@ -220,37 +224,39 @@ def get_bar1():
                 format='  {percent:2.0%}',
                 interface='wlp3s0'
             ),
-            widget.Clock(format="󰃰 %a %b %d %H:%M %p"),
+            widget.Clock(format="%a %b %d %I:%M %p "),
         ]
 
 def get_bar2():
-    return [widget.GroupBox(
+    return [
+        widget.GroupBox(
                 highlight_method="line", 
-                active = colors["magenta"], # not current active font color
-                inactive = colors["fg"],
-                rounded = False,
-                disable_drag= True,
-                highlight_color = colors["bg"],
-                this_current_screen_border = colors["magenta"], # current active font color - MAIN
-                this_screen_border = colors["magenta"],
-                other_current_screen_border = colors["bg"],
-                other_screen_border = colors["bg"],
-                urgent_border = colors["red"],
-                urgent_text= colors["red"],
+                active=colors["magenta"], # not current active font color
+                inactive=colors["fg"],
+                rounded=False,
+                disable_drag=True,
+                highlight_color=colors["bg"],
+                this_current_screen_border=colors["blue"], # current active font color - MAIN
+                this_screen_border=colors["magenta"],
+                other_current_screen_border=colors["bg"],
+                other_screen_border=colors["bg"],
+                urgent_alert_method="line",
+                urgent_border=colors["red"],
+                urgent_text=colors["red"],
                 #foreground = colors["fg"],
                 #background = colors["red"],
-                #hide_unused=True,
+                hide_unused=True,
                 ),
             widget.CurrentLayout(),
             widget.Spacer(),
-            widget.Clock(format="󰃰 %a %b %d %I:%M %p"),
+            widget.Clock(format="%a %b %d %I:%M %p "),
         ]
 
 screens = [
     Screen(
         top=bar.Bar(
             get_bar1(),
-            30, # bar height
+            35, # bar height
             #border_color = [0, 0, 0, 0],    # Borders are transparent
             #border_width = [0, 0, 0, 0],    # Draw top and bottom borders
             #margin =      [15, 60, 6, 60], # Draw top and bottom borders
@@ -260,7 +266,7 @@ screens = [
     Screen(
         top=bar.Bar(
             get_bar2(),
-            30, # bar height
+            35, # bar height
         ), 
     ),
 ]
