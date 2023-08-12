@@ -25,7 +25,7 @@
 # SOFTWARE.
 
 from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, Screen, DropDown
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from themes.tokyonight import colors
@@ -134,6 +134,17 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+groups.append(ScratchPad("scratchpad", [
+        DropDown("mixer", "alacritty -e pulsemixer", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("file-browser", "alacritty -e lf", width=0.6, height=0.6, x=0.2, y=0.2),
+    ])
+)
+
+keys.extend([
+    Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("mixer")),
+    Key([mod, "Shift"], "f", lazy.group["scratchpad"].dropdown_toggle("file-browser")),
+])
 
 colors = colors["night"]
 
@@ -265,6 +276,10 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = True
 floating_layout = layout.Floating(
+    border_focus=colors["magenta"],
+    border_normal=colors["black"],
+    border_width=2,
+    margin=5,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
