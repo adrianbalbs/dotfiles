@@ -138,12 +138,14 @@ for i in groups:
 groups.append(ScratchPad("scratchpad", [
         DropDown("mixer", "alacritty -e pulsemixer", width=0.6, height=0.6, x=0.2, y=0.2),
         DropDown("file-browser", "alacritty -e lf", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("btop", "alacritty -e btop", width=0.8, height=0.8, x=0.1, y=0.1),
     ])
 )
 
 keys.extend([
     Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("mixer")),
     Key([mod, "Shift"], "f", lazy.group["scratchpad"].dropdown_toggle("file-browser")),
+    Key([mod], "b", lazy.group["scratchpad"].dropdown_toggle("btop")),
 ])
 
 colors = colors["night"]
