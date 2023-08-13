@@ -35,7 +35,7 @@ terminal = guess_terminal()
 
 class Apps:
     rofi_drun = "rofi -show drun"
-    browser = "brave"
+    browser = "firefox"
 
 class Utils:
     rofi_walls = "rofi_walls.sh"

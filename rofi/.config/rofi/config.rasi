@@ -1,9 +1,12 @@
 configuration {
   display-drun: "Applications:";
+  terminal: "alacritty";
   display-window: "Windows:";
   drun-display-format: "{name}";
   font: "JetBrainsMono Nerd Font 10";
   modi: "window,run,drun,emoji,calc";
+  show-icons: true;
+  icon-them: "Papirus";
 }
 
 @theme "/dev/null"
@@ -42,7 +45,7 @@ element-text {
 }
 
 element-icon {
-  size: 14;
+  size: 25;
   padding: 0 10 0 0;
 }
 
