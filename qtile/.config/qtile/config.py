@@ -42,6 +42,7 @@ class Utils:
     rofi_power = "rofi_power.sh"
     screenshot_full = "flameshot screen --number 1"
     screenshot_gui = "flameshot gui"
+    clipboard = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -92,7 +93,8 @@ keys = [
     Key([mod, "Shift"], "w", lazy.spawn(Utils.rofi_walls), desc="Launch wallpaper changer"),
     Key([mod, "Shift"], "p", lazy.spawn(Utils.rofi_power), desc="Launch power settings"),
     Key([mod], "Print", lazy.spawn(Utils.screenshot_full), desc="Screenshot primary monitor"),
-    Key([mod, "Shift"], "Print", lazy.spawn(Utils.screenshot_full), desc="Screenshot select"),
+    Key([mod], "c", lazy.spawn(Utils.clipboard), desc="Screenshot primary monitor"),
+    Key([mod, "Shift"], "Print", lazy.spawn(Utils.screenshot_gui), desc="Screenshot select"),
     Key([mod, "shift"], "b", lazy.spawn(Apps.browser), desc="Launch browser"),
 
     # Toggle between different layouts as defined below
@@ -139,6 +141,7 @@ for i in groups:
 
 groups.append(ScratchPad("scratchpad", [
         DropDown("mixer", "alacritty -e pulsemixer", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("drop-term", "alacritty", width=0.6, height=0.6, x=0.2, y=0.2),
         DropDown("file-browser", "alacritty -e lf", width=0.6, height=0.6, x=0.2, y=0.2),
         DropDown("btop", "alacritty -e btop", width=0.8, height=0.8, x=0.1, y=0.1),
     ])
@@ -146,6 +149,7 @@ groups.append(ScratchPad("scratchpad", [
 
 keys.extend([
     Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("mixer")),
+    Key([mod], "t", lazy.group["scratchpad"].dropdown_toggle("drop-term")),
     Key([mod, "Shift"], "f", lazy.group["scratchpad"].dropdown_toggle("file-browser")),
     Key([mod], "b", lazy.group["scratchpad"].dropdown_toggle("btop")),
 ])
