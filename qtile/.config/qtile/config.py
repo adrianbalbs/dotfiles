@@ -209,9 +209,15 @@ def get_bar1():
                 ),
             widget.CurrentLayout(),
             widget.Spacer(),
-            widget.Net(
-                interface='wlp3s0',
-                format='{down} ↓↑ {up}',
+            #widget.Net(
+             #   interface='wlp3s0',
+              #  format='{down} ↓↑ {up}',
+            #),
+            widget.CheckUpdates(
+                display_format="󰚰 {updates}",
+                distro="Arch_yay",
+                colour_have_updates=colors["magenta"],
+                colour_no_updates=colors["fg"]
             ),
             widget.PulseVolume(
             device="Focusrite Scarlett 6i6 Analog Surround 2.1",
