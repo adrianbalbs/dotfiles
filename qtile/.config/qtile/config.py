@@ -215,6 +215,7 @@ def get_bar1():
             #),
             widget.CheckUpdates(
                 display_format="󰚰 {updates}",
+                no_update_string="󰚰 0",
                 distro="Arch_yay",
                 colour_have_updates=colors["magenta"],
                 colour_no_updates=colors["fg"]

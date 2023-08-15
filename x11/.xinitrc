@@ -44,7 +44,7 @@ sleep 3
 ~/.fehbg &
 picom --backend xrender &
 dunst &
-# ~/.config/polybar/launch.sh &
 # exec qtile start
 # slstatus &
+redshift &
 exec qtile start
