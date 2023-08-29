@@ -27,7 +27,6 @@ bindkey '^[f' forward-word
 bindkey '^ ' autosuggest-accept
 bindkey '^E' end-of-line
 bindkey '^A' beginning-of-line
-eval "$(starship init zsh)"
 
 if [ -f ~/.aliases ]; then
   source ~/.aliases
@@ -37,8 +36,13 @@ fi
 
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-source /usr/share/nvm/init-nvm.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Created by `pipx` on 2023-08-10 09:20:57
 export PATH="$PATH:/home/adrian/.local/bin"
+eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /home/adrianbalbs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
