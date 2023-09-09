@@ -207,42 +207,46 @@ def get_bar1():
                 #background = colors["red"],
                 hide_unused=True,
                 ),
-            widget.CurrentLayout(),
+            widget.CurrentLayoutIcon(
+                use_mask=True, # needs to be on for the icon to use our foreground
+                scale=0.5,
+                padding=5, # Don't delete this or the bar will go transparent, for some reason
+            ),
             widget.Spacer(),
             #widget.Net(
              #   interface='wlp3s0',
               #  format='{down} ↓↑ {up}',
             #),
-            widget.CheckUpdates(
-                display_format="󰚰 {updates}",
-                no_update_string="󰚰 0",
-                distro="Arch_yay",
-                colour_have_updates=colors["magenta"],
-                colour_no_updates=colors["fg"]
-            ),
-            widget.PulseVolume(
-            device="Focusrite Scarlett 6i6 Analog Surround 2.1",
-            fmt=" {}"
-            ),
-            widget.ThermalSensor(
-                format=' {temp:.0f}{unit}',
-                tag_sensor='Tctl',
-                threshold=60,
-                foreground_alert=colors["red"],
-                foreground = colors["fg"],
-            ),
-            widget.CPU(
-                format=' {load_percent}%'
-            ),
-            widget.Memory(
-                format=' {MemPercent}%'
-            ),
+            # widget.CheckUpdates(
+            #     display_format="󰚰 {updates}",
+            #     no_update_string="󰚰 0",
+            #     distro="Arch_yay",
+            #     colour_have_updates=colors["magenta"],
+            #     colour_no_updates=colors["fg"]
+            # ),
+            # widget.PulseVolume(
+            # device="Focusrite Scarlett 6i6 Analog Surround 2.1",
+            # fmt=" {}"
+            # ),
+            # widget.ThermalSensor(
+            #     format=' {temp:.0f}{unit}',
+            #     tag_sensor='Tctl',
+            #     threshold=60,
+            #     foreground_alert=colors["red"],
+            #     foreground = colors["fg"],
+            # ),
+            # widget.CPU(
+            #     format=' {load_percent}%'
+            # ),
+            # widget.Memory(
+            #     format=' {MemPercent}%'
+            # ),
             widget.Wlan(
                 #format='  {essid} {percent:2.0%}',
                 format='  {percent:2.0%}',
                 interface='wlp3s0'
             ),
-            widget.Clock(format="%a %b %d %I:%M %p "),
+            widget.Clock(format="%b %d, %I:%M %p "),
         ]
 
 def get_bar2():
@@ -265,9 +269,13 @@ def get_bar2():
                 #background = colors["red"],
                 hide_unused=True,
                 ),
-            widget.CurrentLayout(),
+            widget.CurrentLayoutIcon(
+                use_mask=True, # needs to be on for the icon to use our foreground
+                scale=0.5,
+                padding=5, # Don't delete this or the bar will go transparent, for some reason
+            ),
             widget.Spacer(),
-            widget.Clock(format="%a %b %d %I:%M %p "),
+            widget.Clock(format="%b %d, %I:%M %p "),
         ]
 
 screens = [
