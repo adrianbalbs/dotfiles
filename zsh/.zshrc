@@ -16,6 +16,7 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH=/home/adrian/scripts:$PATH
+export PATH=/opt/gradle/gradle-7.2/bin:$PATH
 
 # Keybindings
 bindkey '^H' backward-kill-word
