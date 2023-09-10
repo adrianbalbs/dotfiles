@@ -217,17 +217,17 @@ def get_bar1():
              #   interface='wlp3s0',
               #  format='{down} ↓↑ {up}',
             #),
-            # widget.CheckUpdates(
-            #     display_format="󰚰 {updates}",
-            #     no_update_string="󰚰 0",
-            #     distro="Arch_yay",
-            #     colour_have_updates=colors["magenta"],
-            #     colour_no_updates=colors["fg"]
-            # ),
-            # widget.PulseVolume(
-            # device="Focusrite Scarlett 6i6 Analog Surround 2.1",
-            # fmt=" {}"
-            # ),
+            widget.CheckUpdates(
+                display_format="󰚰 {updates}",
+                no_update_string="󰚰 0",
+                distro="Arch_yay",
+                colour_have_updates=colors["magenta"],
+                colour_no_updates=colors["fg"]
+            ),
+            widget.PulseVolume(
+            device="Focusrite Scarlett 6i6 Analog Surround 2.1",
+            fmt=" {}"
+            ),
             # widget.ThermalSensor(
             #     format=' {temp:.0f}{unit}',
             #     tag_sensor='Tctl',
