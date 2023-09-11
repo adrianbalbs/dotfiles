@@ -31,13 +31,13 @@ bindkey '^A' beginning-of-line
 
 if [ -f ~/.aliases ]; then
   source ~/.aliases
-else
-  echo "Missing .aliases files"
 fi
 
 
+# ZSH specific stuff
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-08-10 09:20:57
 export PATH="$PATH:/home/adrian/.local/bin"
@@ -46,4 +46,5 @@ eval "$(starship init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f "/home/adrian/.ghcup/env" ] && source "/home/adrian/.ghcup/env" # ghcup-env
+
