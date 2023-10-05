@@ -94,7 +94,7 @@ keys = [
     Key([mod, "Shift"], "p", lazy.spawn(Utils.rofi_power), desc="Launch power settings"),
     Key([mod], "Print", lazy.spawn(Utils.screenshot_full), desc="Screenshot primary monitor"),
     Key([mod], "c", lazy.spawn(Utils.clipboard), desc="Screenshot primary monitor"),
-    Key([mod, "Shift"], "Print", lazy.spawn(Utils.screenshot_gui), desc="Screenshot select"),
+    Key([mod, "control"], "Print", lazy.spawn(Utils.screenshot_gui), desc="Screenshot select"),
     Key([mod, "shift"], "b", lazy.spawn(Apps.browser), desc="Launch browser"),
 
     # Toggle between different layouts as defined below
@@ -224,10 +224,10 @@ def get_bar1():
                 colour_have_updates=colors["magenta"],
                 colour_no_updates=colors["fg"]
             ),
-            widget.PulseVolume(
-            device="Focusrite Scarlett 6i6 Analog Surround 2.1",
-            fmt=" {}"
-            ),
+            # widget.PulseVolume(
+            # device="Focusrite Scarlett 6i6 Analog Surround 2.1",
+            # fmt=" {}"
+            # ),
             # widget.ThermalSensor(
             #     format=' {temp:.0f}{unit}',
             #     tag_sensor='Tctl',
