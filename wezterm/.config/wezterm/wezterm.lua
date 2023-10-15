@@ -18,6 +18,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font_size = 14
+config.default_cursor_style = "SteadyUnderline"
+config.window_background_opacity = 0.9
 
 -- and finally, return the configuration to wezterm
 return config
