@@ -27,11 +27,11 @@
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, Screen, DropDown
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 from themes.tokyonight import colors
 
 mod = "mod1"
-terminal = guess_terminal()
+# terminal = guess_terminal()
+terminal = "wezterm"
 
 class Apps:
     rofi_drun = "rofi -show drun"
