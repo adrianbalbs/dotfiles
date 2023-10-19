@@ -2,6 +2,7 @@ set relativenumber
 set number
 let mapleader = " "
 set surround
+set NERDTree
 
 nmap <leader>ca <action>(ShowIntentionActions)
 nmap <leader>i <action>(Generate)
@@ -9,7 +10,10 @@ nmap <leader>w- <action>(SplitHorizontally)
 nmap <leader>w\| <action>(SplitVertically)
 nmap <leader>bd <action>(CloseEditor)
 nmap <leader>cd <action>(ShowErrorDescription)
+nmap <C-h> <action>(PrevSplitter)
+nmap <C-l> <action>(NextSplitter)
 nmap ]e <action>(GotoNextError)
 nmap [e <action>(GotoPreviousError)
 nmap <S-h> <action>(PreviousTab)
 nmap <S-l> <action>(NextTab)
+nmap <leader>e <action>(ProjectViewPopupMenu)

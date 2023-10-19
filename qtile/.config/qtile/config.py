@@ -140,10 +140,10 @@ for i in groups:
     )
 
 groups.append(ScratchPad("scratchpad", [
-        DropDown("mixer", "alacritty -e pulsemixer", width=0.6, height=0.6, x=0.2, y=0.2),
-        DropDown("drop-term", "alacritty", width=0.6, height=0.6, x=0.2, y=0.2),
-        DropDown("file-browser", "alacritty -e lf", width=0.6, height=0.6, x=0.2, y=0.2),
-        DropDown("btop", "alacritty -e btop", width=0.8, height=0.8, x=0.1, y=0.1),
+        DropDown("mixer", "wezterm -e pulsemixer", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("drop-term", "wezterm", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("file-browser", "wezterm -e lf", width=0.6, height=0.6, x=0.2, y=0.2),
+        DropDown("btop", "wezterm -e btop", width=0.8, height=0.8, x=0.1, y=0.1),
     ])
 )
 
