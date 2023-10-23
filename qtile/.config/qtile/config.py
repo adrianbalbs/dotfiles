@@ -156,7 +156,7 @@ keys.extend([
 
 colors = colors["night"]
 
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 0,
                 "margin": 5,
                 "border_focus": colors["magenta"],
                 "border_normal": colors["black"]
