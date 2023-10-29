@@ -14,6 +14,7 @@ $nodejs\
 $python\
 $lua\
 $rust\
+$haskell\
 $shell\
 $fill\
 $cmd_duration \
@@ -63,5 +64,3 @@ format = "[$time]($style)"
 [git_metrics]
 added_style = 'bold blue'
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
-
-
