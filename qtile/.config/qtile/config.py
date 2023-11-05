@@ -29,7 +29,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, Screen, 
 from libqtile.lazy import lazy
 from themes.tokyonight import colors
 
-mod = "mod1"
+mod = "mod4"
 # terminal = guess_terminal()
 terminal = "wezterm"
 
