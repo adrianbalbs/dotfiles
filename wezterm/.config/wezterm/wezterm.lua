@@ -19,7 +19,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.font_size = 16
 config.default_cursor_style = "SteadyUnderline"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
 
 -- and finally, return the configuration to wezterm

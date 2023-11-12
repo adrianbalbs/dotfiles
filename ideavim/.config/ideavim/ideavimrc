@@ -3,6 +3,7 @@ set number
 let mapleader = " "
 set surround
 set NERDTree
+set vim-commentary
 
 nmap <leader>ca <action>(ShowIntentionActions)
 nmap <leader>i <action>(Generate)
