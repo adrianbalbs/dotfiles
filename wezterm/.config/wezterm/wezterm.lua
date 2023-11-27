@@ -17,7 +17,7 @@ config.color_scheme = "Tokyo Night Moon"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font_size = 16
+config.font_size = 15
 config.default_cursor_style = "SteadyUnderline"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
