@@ -17,6 +17,8 @@ export VISUAL=/usr/bin/nvim
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH=/home/adrian/scripts:$PATH
 export PATH=/opt/gradle/gradle-7.2/bin:$PATH
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Keybindings
 bindkey '^H' backward-kill-word

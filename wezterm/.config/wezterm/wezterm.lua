@@ -21,6 +21,10 @@ config.font_size = 16
 config.default_cursor_style = "SteadyUnderline"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
-
+-- config.enable_wayland = false
+-- config.prefer_egl = true
+config.initial_cols = 120
+config.initial_rows = 40
 -- and finally, return the configuration to wezterm
 return config
+
