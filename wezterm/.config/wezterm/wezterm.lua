@@ -17,12 +17,12 @@ config.color_scheme = "Tokyo Night Moon"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font_size = 15
+config.font_size = 14
 config.default_cursor_style = "SteadyUnderline"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
--- config.enable_wayland = false
--- config.prefer_egl = true
+config.enable_wayland = true
+config.prefer_egl = false
 config.initial_cols = 120
 config.initial_rows = 40
 -- and finally, return the configuration to wezterm
