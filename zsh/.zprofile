@@ -1,14 +1,7 @@
-[[ -f ~/.zshrc ]] && . ~/.zshrc
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-fi
+# Added by Toolbox App
+export PATH="$PATH:/Users/adrian/Library/Application Support/JetBrains/Toolbox/scripts"
 
-# Created by `pipx` on 2023-08-10 09:20:57
-export PATH="$PATH:/home/adrian/.local/bin"
-export PATH="$PATH:/home/adrian/go/bin"
-export PATH=/home/adrian/scripts:$PATH
