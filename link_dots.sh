@@ -2,10 +2,10 @@
 for dir in *
 do
     if [ -d "$dir" ]; then
-        if [ ! -d "$HOME/.test/$dir" ]; then
-            mkdir "$HOME/.test/$dir"
+        if [ ! -d "$HOME/.config/$dir" ]; then
+            mkdir "$HOME/.config/$dir"
         fi
-        stow --verbose "$dir" -t "$HOME/.test/$dir/"
+        stow --verbose "$dir" -t "$HOME/.config/$dir/"
     fi
 done
 
