@@ -7,3 +7,5 @@ export PATH="$PATH:/Users/adrian/Library/Application Support/JetBrains/Toolbox/s
 
 # This points to your local browser, below is an example for pointing to "Chrome" on MacOS
 export BROWSER_EXE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+export CYPRESS_TEST_MODE=local
