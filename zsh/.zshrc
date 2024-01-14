@@ -4,16 +4,14 @@ export LSCOLORS=gxFxCxDxBxegedabagaced
 
 [ -f ~/.aliases ] && source ~/.aliases
 
-bindkey '^[ ' autosuggest-accept
 
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-[ -d ~/.zsh/zsh-autosuggestions ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Use gnu coreutils instead of mac coreutils
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
-[ -d ~/.zsh/zsh-syntax-highlighting ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 # export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="$PATH:/opt/gradle/gradle-7.2/bin"
