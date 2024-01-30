@@ -110,6 +110,12 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
+alias ls='ls --color=auto'
+export CLICOLOR=1
+export LSCOLORS=gxFxCxDxBxegedabagaced
+
+alias chart='cd repos/charts/'
+
 [ -f ~/.aliases ] && source ~/.aliases
 
 bindkey '^[ ' autosuggest-accept
