@@ -13,9 +13,11 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "kanagawabones"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
+
 config.font = wezterm.font("FantasqueSansM Nerd Font")
 
 config.font_size = 18
@@ -26,5 +28,14 @@ config.enable_wayland = true
 config.prefer_egl = false
 config.initial_cols = 120
 config.initial_rows = 40
+
+config.keys = {
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config

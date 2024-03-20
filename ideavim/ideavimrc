@@ -4,6 +4,7 @@ let mapleader = " "
 set surround
 set NERDTree
 set vim-commentary
+set vim-highlightedyank
 
 nmap <leader>ca <action>(ShowIntentionActions)
 nmap <leader>i <action>(Generate)
