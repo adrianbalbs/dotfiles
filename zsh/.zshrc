@@ -135,8 +135,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/Users/adrian/repos/comp3131/VC/:$PATH"
-
 export CLASSPATH=${CLASSPATH}:/Users/adrian/repos/comp3131
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -270,4 +270,4 @@ fi
 #
 # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
 #
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
