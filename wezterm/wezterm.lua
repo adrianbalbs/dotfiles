@@ -18,9 +18,9 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 
-config.font = wezterm.font("FantasqueSansM Nerd Font")
+config.font = wezterm.font("FiraCode Nerd Font")
 
-config.font_size = 18
+config.font_size = 16
 config.default_cursor_style = "SteadyUnderline"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
@@ -36,6 +36,15 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 }
+
+for i = 1, 8 do
+	-- CTRL+ALT + number to move to that position
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "CTRL|ALT",
+		action = wezterm.action.MoveTab(i - 1),
+	})
+end
 
 -- and finally, return the configuration to wezterm
 return config
