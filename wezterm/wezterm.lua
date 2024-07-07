@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").main
 
 -- This table will hold the configuration.
 local config = {}
@@ -13,7 +14,9 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "kanagawabones"
+-- config.color_scheme = "rose-pine"
+config.colors = theme.colors()
+
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
@@ -26,8 +29,8 @@ config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
 config.enable_wayland = true
 config.prefer_egl = false
-config.initial_cols = 120
-config.initial_rows = 40
+config.initial_cols = 180
+config.initial_rows = 65
 
 config.keys = {
 	{
