@@ -39,7 +39,7 @@ export LSCOLORS=gxFxCxDxBxegedabagaced
 
 [ -f ~/.aliases ] && source ~/.aliases
 
-# Exports and PATH 
+# Exports and PATH
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
@@ -59,8 +59,6 @@ export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
 export PNPM_HOME="/Users/adrian/Library/pnpm"
