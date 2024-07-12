@@ -23,7 +23,7 @@ config.tab_bar_at_bottom = true
 
 config.font = wezterm.font("FiraCode Nerd Font")
 
-config.font_size = 16
+config.font_size = 15
 config.default_cursor_style = "SteadyUnderline"
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 15
