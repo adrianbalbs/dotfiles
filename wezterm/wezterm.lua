@@ -1,6 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").main
+local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").moon
 
 -- This table will hold the configuration.
 local config = {}
