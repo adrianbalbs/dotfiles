@@ -19,16 +19,18 @@ config.colors = theme.colors()
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.font = wezterm.font("FiraCode Nerd Font")
-config.font_size = 15
+config.font = wezterm.font("IosevkaTerm Nerd Font Mono", { weight = "Medium" })
+config.font_size = 17
 config.default_cursor_style = "SteadyUnderline"
-config.window_background_opacity = 0.8
+-- config.window_background_opacity = 0.9
 -- config.macos_window_background_blur = 15
-config.enable_wayland = true
-config.prefer_egl = false
 config.initial_cols = 180
 config.initial_rows = 65
 config.window_decorations = "RESIZE"
+
+config.window_padding = {
+	bottom = 10,
+}
 
 config.keys = {
 	{
