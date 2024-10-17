@@ -33,11 +33,29 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza $realpath'
 autoload -U compinit && compinit
 zinit cdreplay -q
 
+# Eza config
 alias ls='eza --icons --git'
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagaced
 
-[ -f ~/.aliases ] && source ~/.aliases
+# Uni aliases
+export ZID=z5397730
+export CSE=${ZID}@login.cse.unsw.edu.au
+alias cse="ssh $CSE"
+
+# Git Aliases
+alias gst='git status'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gcm='git checkout main'
+alias gd='git diff'
+alias gdc='git diff --cached'
+# [c]heck [o]ut
+alias co='git checkout'
+# [f]uzzy check[o]ut
+fo() {
+  git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
+}
 
 # Exports and PATH
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
@@ -48,17 +66,22 @@ export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 export PATH="$PATH:/opt/gradle/gradle-7.2/bin"
 
+# Haskell
 [ -f "/Users/adrian/.ghcup/env" ] && source "/Users/adrian/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="$PATH:/Users/adrian/.local/bin/"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Java
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
 export PNPM_HOME="/Users/adrian/Library/pnpm"
@@ -70,3 +93,10 @@ esac
 
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+
+# bun completions
+[ -s "/Users/adrian/.bun/_bun" ] && source "/Users/adrian/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
