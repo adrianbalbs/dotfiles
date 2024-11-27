@@ -29,10 +29,9 @@ vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning"
 vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- windows
-vim.keymap.set("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
-vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
-vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
-vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+vim.keymap.set("n", "<leader>w", "<C-W>", { desc = "Windows", remap = true })
+vim.keymap.set("n", "\\", "<C-W>s", { desc = "Split Window Below", remap = true })
+vim.keymap.set("n", "|", "<C-W>v", { desc = "Split Window Right", remap = true })
 
 -- better navigating
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
