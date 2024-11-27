@@ -16,6 +16,8 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = "rose-pine"
 -- config.colors = theme.colors()
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = true
 config.color_scheme = "Everforest Dark (Gogh)"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
@@ -33,11 +35,27 @@ config.window_padding = {
 	bottom = 10,
 }
 
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
 		key = "w",
 		mods = "CMD",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		mods = "LEADER",
+		key = "-",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		mods = "LEADER",
+		key = "=",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		mods = "LEADER",
+		key = "m",
+		action = wezterm.action.TogglePaneZoomState,
 	},
 }
 
