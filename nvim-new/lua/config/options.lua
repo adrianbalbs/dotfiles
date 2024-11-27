@@ -12,3 +12,4 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.signcolumn = "yes"
+vim.opt.inccommand = "split"

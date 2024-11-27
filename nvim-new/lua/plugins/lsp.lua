@@ -5,6 +5,17 @@ return {
 		opts = {},
 	},
 	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
@@ -157,7 +168,14 @@ return {
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
+				ensure_installed = {
+					"lua_ls",
+					"eslint",
+					"vtsls",
+					"tailwindcss",
+					"html",
+					"cssls",
+				},
 				handlers = {
 					-- this first function is the "default handler"
 					-- it applies to every language server without a "custom handler"
