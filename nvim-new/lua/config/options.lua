@@ -9,3 +9,5 @@ vim.opt.undofile = true
 vim.opt.mouse = "a"
 vim.opt.scrolloff = 8
 vim.opt.smartindent = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
