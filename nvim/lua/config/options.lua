@@ -21,10 +21,10 @@ vim.opt.ignorecase = true
 -- For showing hidden characters
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "»·",
-	trail = "·",
-	extends = ">",
-	precedes = "<",
-	nbsp = "␣",
-	eol = "↲",
+    tab = "»·",
+    trail = "·",
+    extends = ">",
+    precedes = "<",
+    nbsp = "␣",
+    eol = "↲",
 }
