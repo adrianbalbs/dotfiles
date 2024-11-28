@@ -44,3 +44,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", '"_dP')
+
+-- For some reason this key was binded by which-key, causes a clash so removing
+vim.keymap.del("n", "gc")
