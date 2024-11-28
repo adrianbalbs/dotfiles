@@ -15,3 +15,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.inccommand = "split"
 vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = false
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
