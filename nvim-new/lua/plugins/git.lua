@@ -6,7 +6,10 @@ return {
 			"sindrets/diffview.nvim", -- optional - Diff integration
 			"ibhagwan/fzf-lua", -- optional
 		},
-		config = true,
+		config = function()
+			local neogit = require("neogit")
+			vim.keymap.set("n", "<leader>ng", neogit.open, { desc = "Open neogit" })
+		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
