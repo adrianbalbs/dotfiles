@@ -5,10 +5,10 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function()
-        local configs = require("nvim-treesitter.configs")
+        local configs = require "nvim-treesitter.configs"
 
         ---@diagnostic disable-next-line: missing-fields
-        configs.setup({
+        configs.setup {
             ensure_installed = {
                 "c",
                 "lua",
@@ -26,6 +26,11 @@ return {
                 "sql",
                 "svelte",
                 "typescript",
+                "git_config",
+                "gitcommit",
+                "git_rebase",
+                "gitignore",
+                "gitattributes",
             },
             auto_install = true,
             sync_install = false,
@@ -66,6 +71,6 @@ return {
                     },
                 },
             },
-        })
+        }
     end,
 }

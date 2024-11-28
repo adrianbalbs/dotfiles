@@ -12,8 +12,8 @@ return {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason.nvim" },
             { "williamboman/mason-lspconfig.nvim" },
-            { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-            { "j-hui/fidget.nvim",                        opts = {} },
+            { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+            { "j-hui/fidget.nvim", opts = {} },
         },
         config = function()
             local lsp_defaults = require("lspconfig").util.default_config
@@ -29,7 +29,7 @@ return {
                 desc = "LSP actions",
                 callback = function(event)
                     local opts = { buffer = event.buf }
-                    local fzf = require('fzf-lua')
+                    local fzf = require "fzf-lua"
 
                     vim.keymap.set(
                         "n",
@@ -80,16 +80,11 @@ return {
                         vim.tbl_extend("force", opts, { desc = "Rename symbol" })
                     )
                     vim.keymap.set({ "n", "x" }, "<F3>", function()
-                        vim.lsp.buf.format({ async = true })
+                        vim.lsp.buf.format { async = true }
                     end, vim.tbl_extend("force", opts, { desc = "Format code" }))
-                    vim.keymap.set(
-                        "n",
-                        "<leader>ca",
-                        function()
-                            fzf.lsp_code_actions({ previewer = false })
-                        end,
-                        vim.tbl_extend("force", opts, { desc = "Show code actions" })
-                    )
+                    vim.keymap.set("n", "<leader>ca", function()
+                        fzf.lsp_code_actions { previewer = false }
+                    end, vim.tbl_extend("force", opts, { desc = "Show code actions" }))
                 end,
             })
 
@@ -109,34 +104,49 @@ return {
                                 },
                             },
                         },
-                    }
+                    },
                 },
                 vtsls = {},
                 rust_analyzer = { enabled = false },
                 gopls = {},
-
+                basedpyright = {
+                    disableOrganizeImports = true,
+                },
+                ruff = {
+                    capabilities = {
+                        textDocument = {
+                            hover = {
+                                contentFormat = { "plaintext" },
+                                dynamicRegistration = false,
+                            },
+                        },
+                    },
+                },
             }
 
             local ensure_installed = vim.tbl_keys(servers or {})
 
             vim.list_extend(ensure_installed, {
                 "stylua",
+                "prettierd",
                 "prettier",
                 "goimports",
-                "gofumpt"
+                "gofumpt",
+                "shellcheck",
+                "shfmt",
             })
-            require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+            require("mason-tool-installer").setup { ensure_installed = ensure_installed, run_on_start = true }
 
-            require("mason-lspconfig").setup({
+            require("mason-lspconfig").setup {
                 handlers = {
                     function(server_name)
                         local server = servers[server_name] or {}
-                        server.capabilities = vim.tbl_deep_extend('force', {}, lsp_defaults.capabilities,
-                            server.capabilities or {})
+                        server.capabilities =
+                            vim.tbl_deep_extend("force", {}, lsp_defaults.capabilities, server.capabilities or {})
                         require("lspconfig")[server_name].setup(server)
                     end,
                 },
-            })
+            }
         end,
     },
 }
