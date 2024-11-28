@@ -14,6 +14,7 @@ return {
             { "williamboman/mason-lspconfig.nvim" },
             { "WhoIsSethDaniel/mason-tool-installer.nvim" },
             { "j-hui/fidget.nvim", opts = {} },
+            { "b0o/SchemaStore.nvim" },
         },
         config = function()
             local lsp_defaults = require("lspconfig").util.default_config
@@ -26,65 +27,29 @@ return {
             -- LspAttach is where you enable features that only work
             -- if there is a language server active in the file
             vim.api.nvim_create_autocmd("LspAttach", {
-                desc = "LSP actions",
+                desc = "Configure LSP keymappings and actions",
                 callback = function(event)
                     local opts = { buffer = event.buf }
                     local fzf = require "fzf-lua"
 
-                    vim.keymap.set(
-                        "n",
-                        "K",
-                        vim.lsp.buf.hover,
-                        vim.tbl_extend("force", opts, { desc = "Show hover information" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "gd",
-                        vim.lsp.buf.definition,
-                        vim.tbl_extend("force", opts, { desc = "Go to definition" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "gD",
-                        vim.lsp.buf.declaration,
-                        vim.tbl_extend("force", opts, { desc = "Go to declaration" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "gi",
-                        vim.lsp.buf.implementation,
-                        vim.tbl_extend("force", opts, { desc = "Go to implementation" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "go",
-                        vim.lsp.buf.type_definition,
-                        vim.tbl_extend("force", opts, { desc = "Go to type definition" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "gr",
-                        fzf.lsp_references,
-                        vim.tbl_extend("force", opts, { desc = "Find references" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "gs",
-                        vim.lsp.buf.signature_help,
-                        vim.tbl_extend("force", opts, { desc = "Show signature help" })
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<leader>cr",
-                        vim.lsp.buf.rename,
-                        vim.tbl_extend("force", opts, { desc = "Rename symbol" })
-                    )
-                    vim.keymap.set({ "n", "x" }, "<F3>", function()
-                        vim.lsp.buf.format { async = true }
-                    end, vim.tbl_extend("force", opts, { desc = "Format code" }))
-                    vim.keymap.set("n", "<leader>ca", function()
+                    local function map(mode, lhs, rhs, desc)
+                        vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
+                    end
+
+                    -- Navigation and Information
+                    map("n", "K", vim.lsp.buf.hover, "Show hover information")
+                    map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+                    map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+                    map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+                    map("n", "go", vim.lsp.buf.type_definition, "Go to type definition")
+                    map("n", "gs", vim.lsp.buf.signature_help, "Show signature help")
+
+                    -- References and Actions
+                    map("n", "gr", fzf.lsp_references, "Find references")
+                    map("n", "<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+                    map("n", "<leader>ca", function()
                         fzf.lsp_code_actions { previewer = false }
-                    end, vim.tbl_extend("force", opts, { desc = "Show code actions" }))
+                    end, "Show code actions")
                 end,
             })
 
@@ -103,6 +68,25 @@ return {
                                     vim.env.VIMRUNTIME,
                                 },
                             },
+                        },
+                    },
+                },
+                jsonls = {
+                    settings = {
+                        json = {
+                            schemas = require("schemastore").json.schemas(),
+                            validate = { enable = true },
+                        },
+                    },
+                },
+                yamlls = {
+                    settings = {
+                        yaml = {
+                            schemaStore = {
+                                enable = false,
+                                url = "",
+                            },
+                            schemas = require("schemastore").yaml.schemas(),
                         },
                     },
                 },
