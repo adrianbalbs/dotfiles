@@ -90,6 +90,7 @@ return {
                         },
                     },
                 },
+                tailwindcss = {},
                 volar = {
                     init_options = {
                         vue = {
