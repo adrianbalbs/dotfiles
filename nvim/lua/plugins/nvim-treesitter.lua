@@ -32,6 +32,7 @@ return {
                 "git_rebase",
                 "gitignore",
                 "gitattributes",
+                "ocaml",
             },
             auto_install = true,
             sync_install = false,

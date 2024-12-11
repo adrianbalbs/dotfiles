@@ -8,6 +8,13 @@ return {
         "neovim/nvim-lspconfig",
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            servers = {
+                rust_analyzer = {
+                    enabled = false,
+                },
+            },
+        },
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason.nvim" },
@@ -129,7 +136,7 @@ return {
                         },
                     },
                 },
-                rust_analyzer = { enabled = false },
+                rust_analyzer = false,
                 gopls = {},
                 basedpyright = {
                     settings = {
@@ -152,6 +159,27 @@ return {
                 },
                 marksman = {},
                 bashls = {},
+                ocamllsp = {
+                    filetypes = {
+                        "ocaml",
+                        "ocaml.menhir",
+                        "ocaml.interface",
+                        "ocaml.ocamllex",
+                        "reason",
+                        "dune",
+                    },
+                    root_dir = function(fname)
+                        return require("lspconfig.util").root_pattern(
+                            "*.opam",
+                            "esy.json",
+                            "package.json",
+                            ".git",
+                            "dune-project",
+                            "dune-workspace",
+                            "*.ml"
+                        )(fname)
+                    end,
+                },
             }
 
             local ensure_installed = vim.tbl_keys(servers or {})
@@ -164,12 +192,16 @@ return {
                 "gofumpt",
                 "shellcheck",
                 "shfmt",
+                "ocamlformat",
             })
             require("mason-tool-installer").setup { ensure_installed = ensure_installed, run_on_start = true }
 
             require("mason-lspconfig").setup {
                 handlers = {
                     function(server_name)
+                        if servers[server_name] == false then
+                            return
+                        end
                         local server = servers[server_name] or {}
                         server.capabilities =
                             vim.tbl_deep_extend("force", {}, lsp_defaults.capabilities, server.capabilities or {})

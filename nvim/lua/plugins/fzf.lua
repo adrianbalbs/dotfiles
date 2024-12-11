@@ -17,5 +17,6 @@ return {
         vim.keymap.set("n", "<leader>fh", fzf.helptags, { desc = "Fzf Help Tags" })
         vim.keymap.set("n", "<leader>fk", fzf.keymaps, { desc = "Fzf Keymaps" })
         vim.keymap.set("n", "<leader>fm", fzf.manpages, { desc = "Fzf Manpages" })
+        vim.keymap.set("n", "<leader>gf", fzf.git_files, { desc = "Fzf Git Files" })
     end,
 }
