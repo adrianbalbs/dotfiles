@@ -23,6 +23,7 @@ return {
                 "css",
                 "bash",
                 "json",
+                "latex",
                 "sql",
                 "svelte",
                 "typescript",
