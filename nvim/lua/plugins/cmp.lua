@@ -32,23 +32,19 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
-            {
-                "roobert/tailwindcss-colorizer-cmp.nvim",
-                config = function()
-                    require("tailwindcss-colorizer-cmp").setup {
-                        color_square_width = 2,
-                    }
-                end,
-            },
+            "tailwind-tools",
+            "onsails/lspkind-nvim",
         },
         config = function()
             local cmp = require "cmp"
             local luasnip = require "luasnip"
             luasnip.config.setup {}
-            cmp.config.formatting = {
-                format = require("tailwindcss-colorizer-cmp").formatter,
-            }
             cmp.setup {
+                formatting = {
+                    format = require("lspkind").cmp_format {
+                        before = require("tailwind-tools.cmp").lspkind_format,
+                    },
+                },
                 sources = {
                     {
                         name = "lazydev",
