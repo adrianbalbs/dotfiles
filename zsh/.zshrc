@@ -57,23 +57,9 @@ fo() {
   git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
 }
 
-# Exports and PATH
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-
 # Use gnu coreutils instead of mac coreutils
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
-export PATH="$PATH:/opt/gradle/gradle-7.2/bin"
-
-# Haskell
-[ -f "/Users/adrian/.ghcup/env" ] && source "/Users/adrian/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export PATH="$PATH:/Users/adrian/.local/bin/"
-
-
-# Java
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -94,12 +80,3 @@ esac
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
-# bun completions
-[ -s "/Users/adrian/.bun/_bun" ] && source "/Users/adrian/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# temporary nvim stuff
-alias nvim-new='NVIM_APPNAME="nvim-new" nvim'

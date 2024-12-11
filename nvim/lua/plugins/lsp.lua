@@ -50,6 +50,12 @@ return {
                     map("n", "<leader>ca", function()
                         fzf.lsp_code_actions { previewer = false }
                     end, "Show code actions")
+                    map("n", "<leader>ca", function()
+                        fzf.lsp_code_actions { previewer = false }
+                    end, "Show code actions")
+                    map("n", "<leader>fs", function()
+                        fzf.lsp_document_symbols { previewer = false }
+                    end, "Find LSP Symbols")
                 end,
             })
 
@@ -90,6 +96,9 @@ return {
                         },
                     },
                 },
+                html = {
+                    filetypes = { "html", "htmldjango" },
+                },
                 tailwindcss = {},
                 volar = {
                     init_options = {
@@ -123,7 +132,13 @@ return {
                 rust_analyzer = { enabled = false },
                 gopls = {},
                 basedpyright = {
-                    disableOrganizeImports = true,
+                    settings = {
+                        basedpyright = {
+                            analysis = {
+                                typeCheckingMode = "off",
+                            },
+                        },
+                    },
                 },
                 ruff = {
                     capabilities = {
@@ -135,6 +150,8 @@ return {
                         },
                     },
                 },
+                marksman = {},
+                bashls = {},
             }
 
             local ensure_installed = vim.tbl_keys(servers or {})
