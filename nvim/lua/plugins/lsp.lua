@@ -114,6 +114,7 @@ return {
                         },
                     },
                 },
+                astro = {},
                 vtsls = {
                     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
                     settings = {
