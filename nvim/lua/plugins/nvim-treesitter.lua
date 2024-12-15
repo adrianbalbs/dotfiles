@@ -32,6 +32,7 @@ return {
                 "git_rebase",
                 "gitignore",
                 "gitattributes",
+                "astro",
                 "ocaml",
             },
             auto_install = true,
