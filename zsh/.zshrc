@@ -60,23 +60,11 @@ fo() {
 # Use gnu coreutils instead of mac coreutils
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# pnpm
-export PNPM_HOME="/Users/adrian/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
-
-
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
