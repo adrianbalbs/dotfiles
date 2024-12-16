@@ -160,27 +160,27 @@ return {
                 },
                 marksman = {},
                 bashls = {},
-                ocamllsp = {
-                    filetypes = {
-                        "ocaml",
-                        "ocaml.menhir",
-                        "ocaml.interface",
-                        "ocaml.ocamllex",
-                        "reason",
-                        "dune",
-                    },
-                    root_dir = function(fname)
-                        return require("lspconfig.util").root_pattern(
-                            "*.opam",
-                            "esy.json",
-                            "package.json",
-                            ".git",
-                            "dune-project",
-                            "dune-workspace",
-                            "*.ml"
-                        )(fname)
-                    end,
-                },
+                -- ocamllsp = {
+                --     filetypes = {
+                --         "ocaml",
+                --         "ocaml.menhir",
+                --         "ocaml.interface",
+                --         "ocaml.ocamllex",
+                --         "reason",
+                --         "dune",
+                --     },
+                --     root_dir = function(fname)
+                --         return require("lspconfig.util").root_pattern(
+                --             "*.opam",
+                --             "esy.json",
+                --             "package.json",
+                --             ".git",
+                --             "dune-project",
+                --             "dune-workspace",
+                --             "*.ml"
+                --         )(fname)
+                --     end,
+                -- },
             }
 
             local ensure_installed = vim.tbl_keys(servers or {})
@@ -193,7 +193,7 @@ return {
                 "gofumpt",
                 "shellcheck",
                 "shfmt",
-                "ocamlformat",
+                -- "ocamlformat",
             })
             require("mason-tool-installer").setup { ensure_installed = ensure_installed, run_on_start = true }
 

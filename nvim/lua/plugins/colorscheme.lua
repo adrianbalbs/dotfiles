@@ -21,8 +21,22 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        opts = {
+            dark_variant = "moon",
+        },
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            background = {
+                light = "latte",
+                dark = "frappe",
+            },
+        },
         init = function()
-            vim.cmd "colorscheme rose-pine"
+            vim.cmd "colorscheme catppuccin"
         end,
     },
 }
