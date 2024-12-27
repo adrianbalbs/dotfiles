@@ -1,3 +1,4 @@
 font-family = "FantasqueSansM Nerd Font Mono"
 font-size = 18
 theme = "catppuccin-frappe"
+macos-option-as-alt = true
