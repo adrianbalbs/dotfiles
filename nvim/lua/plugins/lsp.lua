@@ -160,6 +160,7 @@ return {
                 },
                 marksman = {},
                 bashls = {},
+                zls = {},
                 -- ocamllsp = {
                 --     filetypes = {
                 --         "ocaml",

@@ -34,6 +34,7 @@ return {
                 "gitattributes",
                 "astro",
                 "ocaml",
+                "zig",
             },
             auto_install = true,
             sync_install = false,
