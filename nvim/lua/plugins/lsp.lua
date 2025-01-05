@@ -161,6 +161,7 @@ return {
                 marksman = {},
                 bashls = {},
                 zls = {},
+                clangd = {},
                 -- ocamllsp = {
                 --     filetypes = {
                 --         "ocaml",
