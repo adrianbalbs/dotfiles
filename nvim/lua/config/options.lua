@@ -20,8 +20,3 @@ vim.opt.ignorecase = true
 
 -- For showing hidden characters
 vim.opt.list = true
-vim.opt.listchars = {
-    tab = "»·",
-    trail = "·",
-    nbsp = "␣",
-}
