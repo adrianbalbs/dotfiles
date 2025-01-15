@@ -16,6 +16,7 @@ return {
                 "vimdoc",
                 "query",
                 "javascript",
+                "tsx",
                 "html",
                 "rust",
                 "go",
