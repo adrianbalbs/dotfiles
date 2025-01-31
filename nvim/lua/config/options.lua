@@ -12,6 +12,10 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.signcolumn = "yes"
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.colorcolumn = "80"
+vim.opt.swapfile = false
 vim.opt.inccommand = "split"
 vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = false
