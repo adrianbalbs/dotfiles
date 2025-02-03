@@ -5,4 +5,5 @@ macos-option-as-alt = true
 mouse-hide-while-typing = true
 window-height = 40
 window-width = 100
+window-padding-x = 10
 
