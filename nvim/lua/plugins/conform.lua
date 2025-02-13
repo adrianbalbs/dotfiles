@@ -65,7 +65,8 @@ return { -- Autoformat
                     "ruff_organize_imports",
                 },
                 go = { "goimports", "gofumpt" },
-            ocaml = { "ocamlformat" },
+                htmldjango = { "djlint" },
+                ocaml = { "ocamlformat" },
                 -- Conform can also run multiple formatters sequentially
                 --
                 -- You can use 'stop_after_first' to run the first available formatter from the list

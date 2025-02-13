@@ -194,6 +194,7 @@ return {
                 "gofumpt",
                 "shellcheck",
                 "shfmt",
+                "djlint",
                 -- "ocamlformat",
             })
             require("mason-tool-installer").setup { ensure_installed = ensure_installed, run_on_start = true }
