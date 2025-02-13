@@ -114,6 +114,13 @@ return {
                     },
                 },
                 astro = {},
+                eslint = {
+                    settings = {
+                        -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
+                        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+                        workingDirectories = { mode = "auto" },
+                    },
+                },
                 vtsls = {
                     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
                     settings = {
