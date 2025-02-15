@@ -56,9 +56,6 @@ return {
                     map("n", "<leader>ca", function()
                         fzf.lsp_code_actions { previewer = false }
                     end, "Show code actions")
-                    map("n", "<leader>ca", function()
-                        fzf.lsp_code_actions { previewer = false }
-                    end, "Show code actions")
                     map("n", "<leader>fs", function()
                         fzf.lsp_document_symbols { previewer = false }
                     end, "Find LSP Symbols")
@@ -146,13 +143,13 @@ return {
                 rust_analyzer = false,
                 gopls = {},
                 basedpyright = {
-                    settings = {
-                        basedpyright = {
-                            analysis = {
-                                typeCheckingMode = "off",
-                            },
-                        },
-                    },
+                    -- settings = {
+                    --     basedpyright = {
+                    --         analysis = {
+                    --             typeCheckingMode = "off",
+                    --         },
+                    --     },
+                    -- },
                 },
                 ruff = {
                     capabilities = {
