@@ -2,7 +2,6 @@ return {
     "echasnovski/mini.nvim",
     version = false,
     config = function()
-        require("mini.statusline").setup {}
         require("mini.surround").setup {
 
             add = "sa", -- Add surrounding in Normal and Visual modes
