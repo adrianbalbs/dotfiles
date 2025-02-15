@@ -143,13 +143,13 @@ return {
                 rust_analyzer = false,
                 gopls = {},
                 basedpyright = {
-                    -- settings = {
-                    --     basedpyright = {
-                    --         analysis = {
-                    --             typeCheckingMode = "off",
-                    --         },
-                    --     },
-                    -- },
+                    settings = {
+                        basedpyright = {
+                            analysis = {
+                                typeCheckingMode = "standard",
+                            },
+                        },
+                    },
                 },
                 ruff = {
                     capabilities = {
