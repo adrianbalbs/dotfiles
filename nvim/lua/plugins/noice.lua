@@ -2,6 +2,19 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
+        routes = {
+            {
+                filter = {
+                    event = "msg_show",
+                    any = {
+                        { find = "%d+L, %d+B" },
+                        { find = "; after #%d+" },
+                        { find = "; before #%d+" },
+                    },
+                },
+                view = "mini",
+            },
+        },
         lsp = {
             -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
             override = {
