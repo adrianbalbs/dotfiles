@@ -49,13 +49,15 @@ return { -- Autoformat
                     lsp_format_opt = "fallback"
                 end
                 return {
-                    timeout_ms = 500,
+                    timeout_ms = 1500,
                     lsp_format = lsp_format_opt,
                 }
             end,
             formatters_by_ft = {
                 lua = { "stylua" },
                 javascript = { "prettierd", "prettier", stop_after_first = true },
+                typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+                javascriptreact = { "prettierd", "prettier", stop_after_first = true },
                 rust = { "rustfmt", lsp_format = "fallback" },
                 python = { -- To fix auto-fixable lint errors.
                     "ruff_fix",
