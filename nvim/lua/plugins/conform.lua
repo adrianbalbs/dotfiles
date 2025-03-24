@@ -49,7 +49,7 @@ return { -- Autoformat
                     lsp_format_opt = "fallback"
                 end
                 return {
-                    timeout_ms = 500,
+                    timeout_ms = 1000,
                     lsp_format = lsp_format_opt,
                 }
             end,
@@ -59,12 +59,16 @@ return { -- Autoformat
                 typescriptreact = { "prettierd", "prettier", stop_after_first = true },
                 javascriptreact = { "prettierd", "prettier", stop_after_first = true },
                 rust = { "rustfmt", lsp_format = "fallback" },
-                python = { -- To fix auto-fixable lint errors.
-                    "ruff_fix",
-                    -- To run the Ruff formatter.
-                    "ruff_format",
-                    -- To organize the imports.
-                    "ruff_organize_imports",
+                -- python = { -- To fix auto-fixable lint errors.
+                --     "ruff_fix",
+                --     -- To run the Ruff formatter.
+                --     "ruff_format",
+                --     -- To organize the imports.
+                --     "ruff_organize_imports",
+                -- },
+                python = {
+                    "black",
+                    "isort",
                 },
                 go = { "goimports", "gofumpt" },
                 htmldjango = { "djlint" },
@@ -72,6 +76,11 @@ return { -- Autoformat
                 -- Conform can also run multiple formatters sequentially
                 --
                 -- You can use 'stop_after_first' to run the first available formatter from the list
+            },
+            formatters = {
+                black = {
+                    prepend_args = { "--fast" },
+                },
             },
         }
     end,
