@@ -73,3 +73,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/adrian/.opam/opam-init/init.zsh' ]] || source '/Users/adrian/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
