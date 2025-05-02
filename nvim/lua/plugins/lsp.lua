@@ -25,11 +25,6 @@ return {
         config = function()
             local lsp_defaults = require("lspconfig").util.default_config
 
-            -- Add cmp_nvim_lsp capabilities settings to lspconfig
-            -- This should be executed before you configure any language server
-            lsp_defaults.capabilities =
-                vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
-
             -- LspAttach is where you enable features that only work
             -- if there is a language server active in the file
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -211,6 +206,7 @@ return {
                         local server = servers[server_name] or {}
                         server.capabilities =
                             vim.tbl_deep_extend("force", {}, lsp_defaults.capabilities, server.capabilities or {})
+                        server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
                         require("lspconfig")[server_name].setup(server)
                     end,
                 },
