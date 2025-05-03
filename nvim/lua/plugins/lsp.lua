@@ -45,8 +45,29 @@ return {
                     end, "Find LSP Symbols")
                 end,
             })
+
+            vim.lsp.config("*", {
+                capabilities = {
+                    textDocument = {
+                        semanticTokens = {
+                            multilineTokenSupport = true,
+                        },
+                    },
+                },
+                root_markers = { ".git" },
+            })
+
             vim.diagnostic.config { virtual_lines = true }
-            vim.lsp.enable { "clangd", "lua_ls", "ts_ls", "gopls", "basedpyright", "json-lsp", "bash-language-server" }
+            vim.lsp.enable {
+                "clangd",
+                "lua_ls",
+                "ts_ls",
+                "gopls",
+                "basedpyright",
+                "json-lsp",
+                "bash-language-server",
+                "ruff",
+            }
         end,
     },
 }

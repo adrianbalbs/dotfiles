@@ -3,9 +3,7 @@ return {
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        -- calling `setup` is optional for customization
         local fzf = require "fzf-lua"
-        fzf.setup {}
 
         -- TODO: Add LSP Fzf commands
         vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Fzf Files" })

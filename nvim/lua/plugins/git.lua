@@ -67,7 +67,6 @@ return {
                     gitsigns.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
                 end, { desc = "Reset selected hunk" })
                 map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage entire buffer" })
-                map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Undo last staged hunk" })
                 map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset entire buffer" })
                 map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview current hunk" })
                 map("n", "<leader>hb", function()
@@ -78,7 +77,7 @@ return {
                 map("n", "<leader>hD", function()
                     gitsigns.diffthis "~"
                 end, { desc = "View diff against last commit" })
-                map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Toggle showing deleted lines" })
+                map("n", "<leader>td", gitsigns.preview_hunk_inline, { desc = "Toggle showing deleted lines" })
 
                 -- Text object mappings
                 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select hunk (text object)" })
