@@ -9,11 +9,10 @@ return {
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            -- { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason.nvim" },
             -- { "williamboman/mason-lspconfig.nvim" },
             { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-            { "b0o/SchemaStore.nvim" },
+            -- { "b0o/SchemaStore.nvim" },
         },
         config = function()
             vim.api.nvim_create_autocmd("LspAttach", {
