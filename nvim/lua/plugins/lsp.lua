@@ -67,6 +67,8 @@ return {
                 "json-lsp",
                 "bash-language-server",
                 "ruff",
+                "marskman",
+                "shellcheck",
             }
         end,
     },
