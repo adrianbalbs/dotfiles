@@ -1,26 +1,23 @@
 return {
     "nvim-lualine/lualine.nvim",
-    -- enabled = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-        sections = {
-            lualine_x = {
-                {
-                    require("noice").api.statusline.mode.get,
-                    cond = require("noice").api.statusline.mode.has,
-                    color = { fg = "#ff9e64" },
-                },
-
-                "encoding",
-                "fileformat",
-                "filetype",
-            },
-        },
-        options = {
-
-            section_separators = "",
-            component_separators = "",
-            globalstatus = true,
-        },
-    },
+    opts = function()
+        local opts = require("lualine").get_config()
+        local trouble = require "trouble"
+        local symbols = trouble.statusline {
+            mode = "lsp_document_symbols",
+            groups = {},
+            title = false,
+            filter = { range = true },
+            format = "{kind_icon}{symbol.name:Normal}",
+            -- The following line is needed to fix the background color
+            -- Set it to the lualine section you want to use
+            hl_group = "lualine_c_normal",
+        }
+        table.insert(opts.sections.lualine_c, {
+            symbols.get,
+            cond = symbols.has,
+        })
+        return opts
+    end,
 }
