@@ -65,10 +65,9 @@ return {
                 "gopls",
                 "basedpyright",
                 "json-lsp",
-                "bash-language-server",
+                "bashls",
                 "ruff",
                 "marskman",
-                "shellcheck",
             }
         end,
     },
