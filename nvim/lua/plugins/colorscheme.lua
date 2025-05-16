@@ -34,6 +34,7 @@ return {
                 light = "latte",
                 dark = "frappe",
             },
+            transparent_background = true,
         },
         init = function()
             vim.cmd "colorscheme catppuccin"

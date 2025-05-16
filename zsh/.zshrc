@@ -47,7 +47,7 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # Eza config
-alias ls='eza --icons --git'
+alias ls='eza --git'
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagaced
 

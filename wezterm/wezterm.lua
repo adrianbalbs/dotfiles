@@ -17,22 +17,27 @@ end
 config.color_scheme = "Catppuccin Frappe"
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = true
--- config.color_scheme = "Flexoki Dark"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.font = wezterm.font("FantasqueSansM Nerd Font")
-config.font_size = 23
+config.font_size = 15
+-- config.window_background_opacity = 0.7
+-- config.kde_window_background_blur = true
+config.max_fps = 240
 config.default_cursor_style = "SteadyUnderline"
--- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 15
 config.initial_cols = 180
-config.initial_rows = 65
-config.window_decorations = "RESIZE"
+config.initial_rows = 50
 
 config.window_padding = {
 	bottom = 10,
 }
+
+local act = wezterm.action
+
+wezterm.on("update-right-status", function(window, pane)
+	window:set_right_status(window:active_workspace())
+end)
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
@@ -55,6 +60,37 @@ config.keys = {
 		mods = "LEADER",
 		key = "m",
 		action = wezterm.action.TogglePaneZoomState,
+	},
+	{
+		key = "9",
+		mods = "ALT",
+		action = act.ShowLauncherArgs({
+			flags = "FUZZY|WORKSPACES",
+		}),
+	},
+	{
+		key = "w",
+		mods = "LEADER",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Foreground = { AnsiColor = "Fuchsia" } },
+				{ Text = "Enter name for new workspace" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- Or the actual line of text they wrote
+				if line then
+					window:perform_action(
+						act.SwitchToWorkspace({
+							name = line,
+						}),
+						pane
+					)
+				end
+			end),
+		}),
 	},
 }
 
