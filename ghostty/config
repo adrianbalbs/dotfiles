@@ -1,5 +1,5 @@
-font-family = "FantasqueSansM Nerd Font Mono"
-font-size = 14
+font-family = "Terminess Nerd Font Mono"
+font-size = 16
 theme = "catppuccin-frappe"
 macos-option-as-alt = true
 mouse-hide-while-typing = true
