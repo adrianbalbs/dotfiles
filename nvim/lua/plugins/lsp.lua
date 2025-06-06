@@ -57,7 +57,20 @@ return {
                 root_markers = { ".git" },
             })
 
+            -- For some reason the clangd settings in the lsp folder are not being merged, so need to change here
+            vim.lsp.config.clangd = {
+                cmd = {
+                    "clangd",
+                    "--background-index",
+                    "--clang-tidy",
+                    "--completion-style=detailed",
+                    "--header-insertion=iwyu",
+                },
+                root_markers = { "compile_commands.json", "compile_flags.txt", ".clang-tidy", ".clang-format" },
+                filetypes = { "c", "cpp" },
+            }
             vim.diagnostic.config { virtual_lines = true }
+
             vim.lsp.enable {
                 "clangd",
                 "lua_ls",
