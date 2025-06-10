@@ -3,3 +3,7 @@
 
 export FLYCTL_INSTALL="/home/adrianb/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
