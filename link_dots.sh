@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Stow files stored in $XDG_CONFIG_HOME
 for dir in *; do
     if [ -d "$dir" ]; then
