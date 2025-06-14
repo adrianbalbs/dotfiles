@@ -6,9 +6,9 @@ for dir in *; do
         if [ ! -d "$HOME/.config/$dir" ]; then
             mkdir "$HOME/.config/$dir"
         fi
-        stow --verbose "$dir" -t "$HOME/.config/$dir/"
+        stow --verbose --adopt "$dir" -t "$HOME/.config/$dir/"
     fi
 done
 
 # Then stow zsh files
-stow --verbose --target="$HOME" zsh
+stow --verbose --adopt --target="$HOME" zsh
