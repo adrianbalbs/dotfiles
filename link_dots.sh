@@ -11,4 +11,4 @@ for dir in *; do
 done
 
 # Then stow zsh files
-stow --verbose zsh
+stow --verbose --target="$HOME" zsh
