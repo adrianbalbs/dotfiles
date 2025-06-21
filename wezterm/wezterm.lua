@@ -21,8 +21,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.font = wezterm.font("FiraCode Nerd Font Mono")
-config.font_size = 14
-config.window_background_opacity = 0.9
+config.font_size = 15
+-- config.window_background_opacity = 0.9
 -- config.kde_window_background_blur = true
 config.max_fps = 240
 config.default_cursor_style = "SteadyUnderline"
@@ -42,8 +42,8 @@ end)
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
-		key = "w",
-		mods = "CMD",
+		key = "x",
+		mods = "LEADER",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
