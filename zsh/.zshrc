@@ -57,12 +57,16 @@ export CSE=${ZID}@login.cse.unsw.edu.au
 alias cse="ssh $CSE"
 
 # Git Aliases
-alias gst='git status'
-alias gaa='git add -A'
+alias gs='git status'
+alias ga='git add'
 alias gc='git commit'
-alias gcm='git checkout main'
+alias gp='git push'
+alias gc='git checkout'
+alias gu='git pull'
+alias gl='git log'
 alias gd='git diff'
-alias gdc='git diff --cached'
+alias gb='git branch'
+# alias gdc='git diff --cached'
 # [c]heck [o]ut
 alias co='git checkout'
 # [f]uzzy check[o]ut
