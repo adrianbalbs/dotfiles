@@ -74,12 +74,13 @@ return {
             vim.lsp.enable {
                 "clangd",
                 "lua_ls",
-                "ts_ls",
+                "vtsls",
                 "gopls",
                 "basedpyright",
                 "json-lsp",
                 "bashls",
                 "ruff",
+                "astro",
                 "marskman",
             }
         end,
