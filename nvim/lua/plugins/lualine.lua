@@ -3,6 +3,8 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
         local opts = require("lualine").get_config()
+        opts.globalstatus = true
+
         local trouble = require "trouble"
         local symbols = trouble.statusline {
             mode = "lsp_document_symbols",
