@@ -57,22 +57,19 @@ export CSE=${ZID}@login.cse.unsw.edu.au
 alias cse="ssh $CSE"
 
 # Git Aliases
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gch='git checkout'
-alias gu='git pull'
-alias gl='git log'
-alias gd='git diff'
-alias gb='git branch'
-# alias gdc='git diff --cached'
-# [c]heck [o]ut
-alias co='git checkout'
-# [f]uzzy check[o]ut
-fo() {
-  git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
-}
+# alias gs='git status'
+# alias ga='git add'
+# alias gc='git commit'
+# alias gp='git push'
+# alias gch='git checkout'
+# alias gu='git pull'
+# alias gl='git log'
+# alias gd='git diff'
+# alias gb='git branch'
+# # alias gdc='git diff --cached'
+# # [c]heck [o]ut
+# alias co='git checkout'
+# # [f]uzzy check[o]ut
 
 # Use gnu coreutils instead of mac coreutils
 [[ "$(uname)" == "Darwin" ]] && export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
