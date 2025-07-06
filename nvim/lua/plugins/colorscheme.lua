@@ -11,10 +11,10 @@ return {
     --         }
     --     end,
     -- },
-    -- {
-    --     "kepano/flexoki-neovim",
-    --     name = "flexoki",
-    -- },
+    {
+        "kepano/flexoki-neovim",
+        name = "flexoki",
+    },
     -- {
     --     "rebelot/kanagawa.nvim",
     -- },
@@ -36,8 +36,8 @@ return {
             },
             transparent_background = true,
         },
-        init = function()
-            vim.cmd "colorscheme catppuccin"
-        end,
+        -- init = function()
+        --     vim.cmd "colorscheme catppuccin"
+        -- end,
     },
 }

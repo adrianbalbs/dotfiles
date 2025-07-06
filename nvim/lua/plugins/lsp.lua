@@ -72,6 +72,7 @@ return {
             vim.diagnostic.config { virtual_lines = true }
 
             vim.lsp.enable {
+                "cssls",
                 "clangd",
                 "lua_ls",
                 "vtsls",

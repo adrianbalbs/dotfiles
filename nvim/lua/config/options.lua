@@ -24,3 +24,6 @@ vim.opt.ignorecase = true
 
 -- For showing hidden characters
 vim.opt.list = true
+
+-- enable colorscheme
+vim.cmd "colorscheme flexoki"
