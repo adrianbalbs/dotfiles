@@ -73,6 +73,7 @@ return {
 
             vim.lsp.enable {
                 "cssls",
+                "hyprls",
                 "clangd",
                 "lua_ls",
                 "vtsls",
