@@ -1,6 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
--- local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").dawn
+local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").main
 
 -- This table will hold the configuration.
 local config = {}
@@ -14,7 +14,8 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "kanagawabones"
+-- config.color_scheme = "kanagawabones"
+config.colors = theme.colors()
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = true
 config.use_fancy_tab_bar = false

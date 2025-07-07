@@ -26,4 +26,4 @@ vim.opt.ignorecase = true
 vim.opt.list = true
 
 -- enable colorscheme
-vim.cmd "colorscheme kanagawa"
+vim.cmd "colorscheme rose-pine"
