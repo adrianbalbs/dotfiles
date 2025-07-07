@@ -1,13 +1,13 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "custom/weather"],
 
-  "modules-center": ["clock", "custom/weather"],
+  "modules-center": ["clock"],
 
   "modules-right": [
     "pulseaudio",
-    "custom/uptime",
+    // "custom/uptime",
     "backlight",
     "battery",
     "network",
@@ -44,7 +44,7 @@
 
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y - %H:%M:%S}",
+    "format": "{:%d/%m - %H:%M}",
     "interval": 1
   },
 
