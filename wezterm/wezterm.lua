@@ -14,7 +14,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Flexoki Dark"
+config.color_scheme = "kanagawabones"
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = true
 config.use_fancy_tab_bar = false
@@ -22,7 +22,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.font_size = 15
--- config.window_background_opacity = 0.9
+config.window_background_opacity = 0.9
 -- config.kde_window_background_blur = true
 config.max_fps = 240
 config.default_cursor_style = "SteadyUnderline"

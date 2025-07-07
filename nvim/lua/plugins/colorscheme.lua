@@ -17,6 +17,9 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
+        opts = {
+            transparent = true,
+        },
     },
     {
         "rose-pine/neovim",
