@@ -1,70 +1,163 @@
 * {
-    font-family: "FiraCode Nerd Font";
-    font-size: 16;
+  font-family: FiraCode Nerd Font;
+  font-size: 16px;
+  min-height: 0;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 0px;
 }
 
 #waybar {
-    /* background: #171717; */
-    background: #0a0a0a;
-    color: #fff;
+  background: transparent;
+  color: #c6d0f5;
+  margin: 2px 2px;
 }
 
-#clock {
-    color: #fff;
-}
-
-#tray {
-    padding-left: 4px;
-}
-
-#workspaces button:hover {
-    background-color: transparent;
+#workspaces {
+  border-radius: 5px;
+  margin: 5px;
+  background: #101010;
+  margin-left: 2px;
 }
 
 #workspaces button {
-    color: #737373;
-    padding-left: 4px;
-    padding-right: 4px;
-    border-radius: 0px;
-}
-
-#workspaces button:hover {
-    background-color: #262626;
+  color: #babbf1;
+  border-radius: 5px;
+  padding: 0.4rem;
 }
 
 #workspaces button.active {
-    color: #84cc16;
+  color: #99d1db;
+  border-radius: 5px;
 }
 
-#window {
-    color: #fff;
+button {
+  background: transparent;
 }
 
-#network {
-    color: #3b82f6;
-    margin-right: 8px;
+#workspaces button:hover {
+  background: #1e1e1e;
+  border: 0px solid transparent;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#custom-lock,
+#custom-power,
+#custom-weather,
+#custom-uptime,
+#custom-docker {
+  background-color: #101010;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: #8caaee;
+  border-radius: 5px;
+}
+
+#custom-weather {
+  color: #8caaee;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+#battery {
+  color: #a6d189;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging) {
+  color: #e78284;
+}
+
+#backlight {
+  color: #e5c890;
+}
+
+#backlight,
+#battery {
+  border-radius: 0;
 }
 
 #pulseaudio {
-    color: #14b8a6;
-    margin-right: 4px;
+  color: #ea999c;
+  border-radius: 5px 0px 0px 5px;
 }
 
-#cpu {
-    color: #0ea5e9;
-    margin-right: 4px;
+#custom-docker {
+  color: #85c1dc;
 }
 
-#temperature {
-    color: #eab308;
-    margin-right: 4px;
+#custom-music {
+  color: #ca9ee6;
+  border-radius: 5px;
 }
 
-#memory {
-    color: #d946ef;
-    margin-right: 4px;
+#custom-lock {
+  color: #babbf1;
 }
 
-#custom-powermenu {
-    color: #f43f5e;
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 5px 5px 0px;
+  color: #e78284;
+}
+
+#custom-docker.docker {
+  color: #85c1dc;
+}
+
+#custom-docker.docker-none {
+  color: #737994;
+}
+
+#custom-docker.docker-error {
+  color: #e78284;
+}
+
+#custom-weather.clear {
+  color: #e5c890;
+  /* Sunny yellow */
+}
+
+#custom-weather.cloud {
+  color: #99d1db;
+  /* Light blue */
+}
+
+#custom-weather.rain {
+  color: #8caaee;
+  /* Blue */
+}
+
+#custom-weather.snow {
+  color: #c6d0f5;
+  /* White-ish */
+}
+
+#custom-weather.thunder {
+  color: #ca9ee6;
+  /* Purple */
+}
+
+#custom-weather.fog {
+  color: #b0b4bc;
+  /* Gray */
+}
+
+#custom-weather.error {
+  color: #e78284;
+  /* Red */
 }
