@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces", "custom/weather"],
-
+  "modules-left": ["hyprland/workspaces", "custom/weather", 
+  ],
   "modules-center": ["clock"],
 
   "modules-right": [
@@ -15,6 +15,7 @@
     "memory",
     "custom/docker",
     "tray",
+    "idle_inhibitor",
     "custom/lock",
     "custom/power"
   ],
@@ -31,7 +32,13 @@
     "icon-size": 16,
     "spacing": 10
   },
-
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
   "custom/music": {
     "format": "  {}",
     "escape": true,

@@ -53,6 +53,7 @@ button {
 #custom-power,
 #custom-weather,
 #custom-uptime,
+#idle_inhibitor,
 #custom-docker {
   background-color: #101010;
   padding: 0.5rem 1rem;
